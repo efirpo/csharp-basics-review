@@ -21,7 +21,7 @@ namespace PierresBakery
         int pastryOrder = int.Parse(Console.ReadLine());
         Bread bread = new Bread(breadOrder, confirmBread);
         Pastry pastry = new Pastry(pastryOrder);
-        Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n======================================================\n\nThank you for your order! Your order details are below.\n\n" + Bread.Bread.CalculateBread() + "\n" + Pastry.Pastry.CalculatePastry() + "\n\nYour total order will cost: $" + ((Bread.Bread._breadPrice) + (Pastry.Pastry._pastryPrice)) + ".00!\n\n======================================================\n\nWould you like to add anything to your order? [ Y / N ]\n======================================================\n");
+        Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n======================================================\n\nThank you for your order! Your order details are below.\n\n" + Bread.CalculateBread() + "\n" + Pastry.CalculatePastry() + "\n\nYour total order will cost: $" + ((Bread._breadPrice) + (Pastry._pastryPrice)) + ".00!\n\n======================================================\n\nWould you like to add anything to your order? [ Y / N ]\n======================================================\n");
         string addOrder = (Console.ReadLine().ToLower());
         if (addOrder == "y")
         {
@@ -30,8 +30,8 @@ namespace PierresBakery
           Bread._breadOrder += addBread;
           Console.WriteLine("\nAdd how many pastries?\n======================================================\n");
           int addPastry = int.Parse(Console.ReadLine());
-          pastry._pastryOrder += addBread;
-          Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n======================================================\n\nThank you for your order! Your order details are below.\n\n" + Bread.Bread.CalculateBread() + "\n" + Pastry.Pastry.CalculatePastry() + "\n\nYour total order will cost: $" + ((Bread.Bread._breadPrice) + (Pastry.Pastry._pastryPrice)) + ".00!\n\n======================================================\n\nWould you like to add anything to your order? [ Y / N ]\n======================================================\n");
+          Pastry._pastryOrder += addPastry;
+          Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n======================================================\n\nThank you for your order! Your final order details are below.\n\n" + Bread.CalculateBread() + "\n" + Pastry.CalculatePastry() + "\n\nYour total order will cost: $" + ((Bread._breadPrice) + (Pastry._pastryPrice)) + ".00!\n\n======================================================\n");
         }
       }
       else if (confirm == "n")

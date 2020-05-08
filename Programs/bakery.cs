@@ -9,7 +9,7 @@ namespace Bakery.Order
     public static int _breadPrice { get; set; }
     public static int _loaves { get; set; }
     public static int _freeLoaves { get; set; }
-    public string _orderType { get; set; }
+    public static string _orderType { get; set; }
 
     public Bread(int amount, string type)
     {
@@ -17,7 +17,7 @@ namespace Bakery.Order
       _orderType = type;
     }
 
-    public string CalculateBread()
+    public static string CalculateBread()
     {
       if (_orderType == "1")
       {
@@ -44,7 +44,7 @@ namespace Bakery.Order
       _pastryOrder = amount;
     }
 
-    public string CalculatePastry()
+    public static string CalculatePastry()
     {
       if (_pastryOrder > 3)
       {
