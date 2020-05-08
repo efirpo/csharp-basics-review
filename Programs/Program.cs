@@ -31,6 +31,7 @@ namespace PierresBakery
         Console.WriteLine("Thank you for your order! Your order details are below.");
         Console.WriteLine(bread.CalculateBread());
         Console.WriteLine(pastry.CalculatePastry());
+        Console.WriteLine("Your total order will cost: $" + ((bread._breadPrice) + (pastry._pastryPrice)) + ".00!");
 
 
 
