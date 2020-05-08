@@ -28,18 +28,18 @@ namespace Bakery.Order
         }
         else if (_breadOrder % 3 < 2)
         {
-          _freeLoaves = (_breadOrder - (_breadOrder / 3));
+          _freeLoaves = (_breadOrder / 3);
         }
       }
       else if (_breadOrder < 2)
       {
-        _breadPrice = 5;
-        _loaves = 1;
+        _breadPrice = (_breadOrder * 5);
+        _loaves = (_breadOrder);
         _freeLoaves = 0;
       }
       else if (_breadOrder == 2)
       {
-        _breadPrice = 10;
+        _breadPrice = (_breadOrder * 2);
         _loaves = 3;
         _freeLoaves = 1;
       }
@@ -61,7 +61,7 @@ namespace Bakery.Order
     {
       if (_pastryOrder > 3)
       {
-        _pastryPrice = (((_pastryOrder - (_pastryOrder % 3) / 3) * 5) + ((_pastryOrder % 3) * 2));
+        _pastryPrice = ((((_pastryOrder - (_pastryOrder % 3)) / 3) * 5) + ((_pastryOrder % 3) * 2));
       }
       else if (_pastryOrder == 3)
       {
@@ -71,7 +71,7 @@ namespace Bakery.Order
       {
         _pastryPrice = _pastryOrder * 2;
       }
-      return "Your pastries will cost: $" + _pastryPrice + ".00";
+      return "Your pastry order will cost: $" + _pastryPrice + ".00, and you're getting " + _pastryOrder + " of them.";
     }
   }
 
