@@ -5,10 +5,10 @@ namespace Bakery.Order
 {
   public class Bread
   {
-    public int _breadOrder { get; set; }
-    public int _breadPrice { get; set; }
-    public int _loaves { get; set; }
-    public int _freeLoaves { get; set; }
+    public static int _breadOrder { get; set; }
+    public static int _breadPrice { get; set; }
+    public static int _loaves { get; set; }
+    public static int _freeLoaves { get; set; }
     public string _orderType { get; set; }
 
     public Bread(int amount, string type)
@@ -27,13 +27,9 @@ namespace Bakery.Order
       }
       else if (_orderType == "2")
       {
-        if (_breadOrder > 2)
-        {
-          _breadPrice = ((((_breadOrder - (_breadOrder % 3)) / 3) * 10) + ((_breadOrder % 3) * 5));
-          _loaves = _breadOrder;
-          _freeLoaves = (_breadOrder / 3);
-        }
-
+        _breadPrice = ((((_breadOrder - (_breadOrder % 3)) / 3) * 10) + ((_breadOrder % 3) * 5));
+        _loaves = _breadOrder;
+        _freeLoaves = (_breadOrder / 3);
       }
       return "Your bread order will cost: $" + _breadPrice + ".00, and you will receive a total of " + _loaves + " loaves, of which " + _freeLoaves + " are on the house!";
     }
@@ -41,12 +37,11 @@ namespace Bakery.Order
 
   public class Pastry
   {
-    public int _pastryOrder { get; set; }
-    public int _pastryPrice { get; set; }
+    public static int _pastryOrder { get; set; }
+    public static int _pastryPrice { get; set; }
     public Pastry(int amount)
     {
       _pastryOrder = amount;
-
     }
 
     public string CalculatePastry()
@@ -66,5 +61,4 @@ namespace Bakery.Order
       return "Your pastry order will cost: $" + _pastryPrice + ".00, and you're getting " + _pastryOrder + " of them.";
     }
   }
-
 }
