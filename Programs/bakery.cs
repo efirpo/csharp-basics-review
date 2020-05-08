@@ -7,6 +7,7 @@ namespace Bakery.Order
   {
     public int _breadOrder { get; set; }
     public int _breadPrice { get; set; }
+    public int _loaves { get; set; }
 
     public Bread(int amount)
     {
@@ -15,17 +16,21 @@ namespace Bakery.Order
 
     public string CalculateBread()
     {
+
       if (_breadOrder > 2)
       {
         _breadPrice = (((_breadOrder - (_breadOrder % 3) / 3) * 10) + ((_breadOrder % 3) * 5));
+        _loaves = ()
       }
       else if (_breadOrder < 2)
       {
         _breadPrice = 5;
+        _loaves = 1;
       }
       else if (_breadOrder == 2)
       {
         _breadPrice = 10;
+        _loaves = 3;
       }
     }
   }
