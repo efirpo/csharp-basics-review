@@ -58,7 +58,7 @@ namespace Bakery.Order
       {
         _pastryPrice = _pastryOrder * 2;
       }
-      return "Your pastry order will cost: $" + _pastryPrice + ".00, and you're getting " + _pastryOrder + " of them.";
+      return "Your pastry order will cost: $" + _pastryPrice + ".00, and you're getting " + _pastryOrder + " of them! Yum!";
     }
   }
 }

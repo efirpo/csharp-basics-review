@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Bakery.Order;
 
 namespace PierresBakery
@@ -9,7 +8,7 @@ namespace PierresBakery
   {
     public static void Main()
     {
-      Console.WriteLine("\n                         Welcome to\n\n'||''|.   ||                                  '                             \n ||   || ...    ....  ... ..  ... ..    ....     ....\n ||...|'  ||  .|...||  ||' ''  ||' '' .|...||   ||. '\n ||       ||  ||       ||      ||     ||        . '|.. \n.||.     .||.  '|...' .||.    .||.     '|...'   |'..|'\n\n                        '||''|.           '||\n                         ||   ||   ....    ||  ..    ....  ... ..  .... ... \n                         ||'''|.  '' .||   || .'   .|...||  ||' ''  '|.  |\n                         ||    || .|' ||   ||'|.   ||       ||       '|.|\n                        .||...|'  '|..'|' .||. ||.  '|...' .||.       '|    \n                                                                   .. |\n                                                                    ''\n======================================================\n\nBread costs $5.00 per loaf, and when you buy 2 you get 1 free!\n\nPastries cost $2.00, or 3 for $5.00!\n\nWould you like to place an order? [ Y / N ]\n\n======================================================\n");
+      Console.WriteLine("\n                         Welcome to\n\n'||''|.   ||                                  '                             \n ||   || ...    ....  ... ..  ... ..    ....     ....\n ||...|'  ||  .|...||  ||' ''  ||' '' .|...||   ||. '\n ||       ||  ||       ||      ||     ||        . '|.. \n.||.     .||.  '|...' .||.    .||.     '|...'   |'..|'\n\n           )             '||''|.           '||\n          (    )          ||   ||   ....    ||  ..    ....  ... ..  .... ... \n           )  (           ||'''|.  '' .||   || .'   .|...||  ||' ''  '|.  |\n      __..---..__         ||    || .|' ||   ||'|.   ||       ||       '|.|\n  ,-='  /  |  \\  `=-.    .||...|'  '|..'|' .||. ||.  '|...' .||.       '|    \n :--..___________..--;                                              .. |\n  \\.,_____________,./                                                 ''\n\n======================================================\n\nBread costs $5.00 per loaf, and when you buy 2 you get 1 free!\n\nPastries cost $2.00, or 3 for $5.00!\n\nWould you like to place an order? [ Y / N ]\n\n======================================================\n");
       string confirm = (Console.ReadLine().ToLower());
       if (confirm == "y")
       {
@@ -21,17 +20,21 @@ namespace PierresBakery
         int pastryOrder = int.Parse(Console.ReadLine());
         Bread bread = new Bread(breadOrder, confirmBread);
         Pastry pastry = new Pastry(pastryOrder);
-        Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n======================================================\n\nThank you for your order! Your order details are below.\n\n" + Bread.CalculateBread() + "\n" + Pastry.CalculatePastry() + "\n\nYour total order will cost: $" + ((Bread._breadPrice) + (Pastry._pastryPrice)) + ".00!\n\n======================================================\n\nWould you like to add anything to your order? [ Y / N ]\n======================================================\n");
+        Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n======================================================\n\nThank you for your order! Your order details are below.\n\n" + Bread.CalculateBread() + "\n" + Pastry.CalculatePastry() + "\n\nYour total order will cost: $" + ((Bread._breadPrice) + (Pastry._pastryPrice)) + ".00!\n\n======================================================\n\nWould you like to add anything to your order? [ Y / N ]\n\n======================================================\n");
         string addOrder = (Console.ReadLine().ToLower());
         if (addOrder == "y")
         {
-          Console.WriteLine("\nAdd how many loaves of bread?\n======================================================\n");
+          Console.WriteLine("\nAdd how many loaves of bread?\n\n======================================================\n");
           int addBread = int.Parse(Console.ReadLine());
           Bread._breadOrder += addBread;
-          Console.WriteLine("\nAdd how many pastries?\n======================================================\n");
+          Console.WriteLine("\nAdd how many pastries?\n\n======================================================\n");
           int addPastry = int.Parse(Console.ReadLine());
           Pastry._pastryOrder += addPastry;
           Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n======================================================\n\nThank you for your order! Your final order details are below.\n\n" + Bread.CalculateBread() + "\n" + Pastry.CalculatePastry() + "\n\nYour total order will cost: $" + ((Bread._breadPrice) + (Pastry._pastryPrice)) + ".00!\n\n======================================================\n");
+        }
+        else if (addOrder == "n")
+        {
+          Console.WriteLine("\n======================================================\n\nThank you, come back sometime soon!\n\n======================================================\n");
         }
       }
       else if (confirm == "n")
