@@ -9,26 +9,11 @@ namespace PierresBakery
   {
     public static void Main()
     {
-
-      Console.WriteLine("\n                         Welcome to\n\n");
-      Console.WriteLine("'||''|.   ||                                  '                             ");
-      Console.WriteLine(" ||   || ...    ....  ... ..  ... ..    ....     ....                       ");
-      Console.WriteLine(" ||...|'  ||  .|...||  ||' ''  ||' '' .|...||   ||. '                       ");
-      Console.WriteLine(" ||       ||  ||       ||      ||     ||        . '|..                      ");
-      Console.WriteLine(".||.     .||.  '|...' .||.    .||.     '|...'   |'..|'                      \n\n");
-      Console.WriteLine("                        '||''|.           '||                               ");
-      Console.WriteLine("                         ||   ||   ....    ||  ..    ....  ... ..  .... ... ");
-      Console.WriteLine("                         ||'''|.  '' .||   || .'   .|...||  ||' ''  '|.  |  ");
-      Console.WriteLine("                         ||    || .|' ||   ||'|.   ||       ||       '|.|   ");
-      Console.WriteLine("                        .||...|'  '|..'|' .||. ||.  '|...' .||.       '|    ");
-      Console.WriteLine("                                                                   .. |     ");
-      Console.WriteLine("                                                                    ''     ");
-
-      Console.WriteLine("\nBread costs $5.00 per loaf, and when you buy 2 you get 1 free!\n\nPastries cost $2.00, or 3 for $5.00!\n\nWould you like to place an order? [Y/N]");
+      Console.WriteLine("\n                         Welcome to\n\n'||''|.   ||                                  '                             \n ||   || ...    ....  ... ..  ... ..    ....     ....\n ||...|'  ||  .|...||  ||' ''  ||' '' .|...||   ||. '\n ||       ||  ||       ||      ||     ||        . '|.. \n.||.     .||.  '|...' .||.    .||.     '|...'   |'..|'\n\n                        '||''|.           '||\n                         ||   ||   ....    ||  ..    ....  ... ..  .... ... \n                         ||'''|.  '' .||   || .'   .|...||  ||' ''  '|.  |\n                         ||    || .|' ||   ||'|.   ||       ||       '|.|\n                        .||...|'  '|..'|' .||. ||.  '|...' .||.       '|    \n                                                                   .. |\n                                                                    ''\n\nBread costs $5.00 per loaf, and when you buy 2 you get 1 free!\n\nPastries cost $2.00, or 3 for $5.00!\n\nWould you like to place an order? [Y/N]");
       string confirm = (Console.ReadLine().ToLower());
       if (confirm == "y")
       {
-        Console.WriteLine("Would you \n\t1) Like to get extra bread loaves on top of your ordered amount\n\n\tor \n\n\t2) Order how many you want total and let us calculate how many should be free? [ 1 / 2 ]");
+        Console.WriteLine("Would you \n\n\t1) Like to get extra bread loaves on top of your ordered amount\n\n\tor \n\n\t2) Order how many you want total and let us calculate how many should be free? \n\n\t\t\t\t[ 1 / 2 ]");
         string confirmBread = (Console.ReadLine().ToLower());
         Console.WriteLine("\nHow many loaves of bread would you like?");
         int breadOrder = int.Parse(Console.ReadLine());
