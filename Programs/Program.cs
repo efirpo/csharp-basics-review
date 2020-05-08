@@ -20,11 +20,13 @@ namespace PierresBakery
       string confirm = (Console.ReadLine().ToLower());
       if (confirm == "y")
       {
+        Console.WriteLine("Would you \n\t1) Like to get extra loaves on top of your order\n\tor \n\t2) Order how many you want total and let us calculate how many should be free? [ 1 / 2 ]");
+        string confirmBread = (Console.ReadLine().ToLower());
         Console.WriteLine("How many loaves of bread would you like?");
         int breadOrder = int.Parse(Console.ReadLine());
         Console.WriteLine("How many pastries would you like?");
         int pastryOrder = int.Parse(Console.ReadLine());
-        Bread bread = new Bread(breadOrder);
+        Bread bread = new Bread(breadOrder, confirmBread);
         Pastry pastry = new Pastry(pastryOrder);
         Console.WriteLine("Thank you for your order! Your order details are below.");
         Console.WriteLine(bread.CalculateBread());

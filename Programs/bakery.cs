@@ -9,20 +9,55 @@ namespace Bakery.Order
     public int _breadPrice { get; set; }
     public int _loaves { get; set; }
     public int _freeLoaves { get; set; }
+    public string _orderType { get; set; }
 
-    public Bread(int amount)
+    public Bread(int amount, string type)
     {
       _breadOrder = amount;
+      _orderType = type;
     }
 
     public string CalculateBread()
     {
-      _breadPrice = _breadOrder * 5;
-      _freeLoaves = (_breadOrder / 2);
-      _loaves = _freeLoaves + _breadOrder;
-      return "Your bread order will cost: $" + _breadPrice + ".00, and you are getting " + _loaves + " loaves, of which " + _freeLoaves + " are on the house!";
+      if (_orderType == "1")
+      {
+        _breadPrice = _breadOrder * 5;
+        _freeLoaves = (_breadOrder / 2);
+        _loaves = _freeLoaves + _breadOrder;
+      }
+      else if (_orderType == "2")
+      {
+        if (_breadOrder > 2)
+        {
+          _breadPrice = ((((_breadOrder - (_breadOrder % 3)) / 3) * 10) + ((_breadOrder % 3) * 5));
+          _loaves = _breadOrder;
+          if (_breadOrder % 3 == 2)
+          {
+            _freeLoaves += 1;
+          }
+          else if (_breadOrder % 3 < 2)
+          {
+            _freeLoaves = (_breadOrder / 3);
+          }
+        }
+        else if (_breadOrder < 2)
+        {
+          _breadPrice = (_breadOrder * 5);
+          _loaves = (_breadOrder);
+          _freeLoaves = 0;
+        }
+        else if (_breadOrder == 2)
+        {
+          _breadPrice = (_breadOrder * 2);
+          _loaves = 3;
+          _freeLoaves = 1;
+        }
+
+      }
+      return "Your bread order will cost: $" + _breadPrice + ".00, and you will receive a total of " + _loaves + " loaves, of which " + _freeLoaves + " are on the house!";
     }
   }
+
   public class Pastry
   {
     public int _pastryOrder { get; set; }
