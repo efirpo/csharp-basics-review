@@ -31,26 +31,7 @@ namespace Bakery.Order
         {
           _breadPrice = ((((_breadOrder - (_breadOrder % 3)) / 3) * 10) + ((_breadOrder % 3) * 5));
           _loaves = _breadOrder;
-          if (_breadOrder % 3 == 2)
-          {
-            _freeLoaves += 1;
-          }
-          else if (_breadOrder % 3 < 2)
-          {
-            _freeLoaves = (_breadOrder / 3);
-          }
-        }
-        else if (_breadOrder < 2)
-        {
-          _breadPrice = (_breadOrder * 5);
-          _loaves = (_breadOrder);
-          _freeLoaves = 0;
-        }
-        else if (_breadOrder == 2)
-        {
-          _breadPrice = (_breadOrder * 2);
-          _loaves = 3;
-          _freeLoaves = 1;
+          _freeLoaves = (_breadOrder / 3);
         }
 
       }
