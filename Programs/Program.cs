@@ -21,6 +21,7 @@ namespace PierresBakery
         int pastryOrder = int.Parse(Console.ReadLine());
         Bread bread = new Bread(breadOrder, confirmBread);
         Pastry pastry = new Pastry(pastryOrder);
+        Console.WriteLine("                                 ||             .\n... ..    ....    ....    ....  ...  ... ...  .||.\n ||' '' .|...|| .|   '' .|...||  ||   ||'  ||  ||\n ||     ||      ||      ||       ||   ||    |  ||\n.||.     '|...'  '|...'  '|...' .||.  ||...'   '|.'\n                                      ||  \n                                     ''''\n");
         Console.WriteLine("\nThank you for your order! Your order details are below.");
         Console.WriteLine("\n" + bread.CalculateBread());
         Console.WriteLine("\n" + pastry.CalculatePastry());
@@ -29,7 +30,7 @@ namespace PierresBakery
 
 
       }
-      else
+      else if (confirm == "n")
       {
         Console.WriteLine("All glutened out, huh? Thank you, come back sometime soon!");
       }
