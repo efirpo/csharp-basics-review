@@ -15,6 +15,15 @@ Clone this repository. Install .NET. Open your terminal. Type "dotnet run".
 #### C#
 #### .NET
 
+## Specs
+
+|Behavior|Input|Output|
+|-----|-----|-----|
+|Program will greet user and display prices|$ dotnet run|Welcome to Pierre's Bakery! Bread is $5.00, at 3 for 2 prices. Pastry is $2.00 for a single, 3 for $5.00. Would you like to order?|
+|Program will prompt user for number of loaves of bread|Would you like to order bread? --> Y | Please enter the number of loaves of bread you would like:|
+|Program will prompt user for number of pastries| Would you like to order pastries? --> Y|Please enter the number of pastries you'd like:|
+|Program will compute order cost based upon previous user inputs|bread: 3, pastries: 5|Your order will be $19.00|
+
 ## Legal
 
 #### MIT License
